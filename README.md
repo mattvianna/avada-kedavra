@@ -1,2 +1,2 @@
-# sala-precisa-kedavra
+# sala-precisa
 Criação de uma LP utilizando API.
