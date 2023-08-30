@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Header from './components/Header';
 import './styles/global.scss';
 
 const root = ReactDOM.createRoot(
@@ -7,8 +8,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <p>
-      hello world!
-    </p>
+    <Header />
   </React.StrictMode>
 );
