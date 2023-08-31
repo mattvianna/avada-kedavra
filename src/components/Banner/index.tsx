@@ -4,7 +4,7 @@ import './style.scss'
 
 function Banner() {
   return (
-    <div className='mainBanner'>
+    <div className='mainBanner' id='topo'>
       <img className='mainBanner__banner' src={banner} alt="" />
     </div>
   )

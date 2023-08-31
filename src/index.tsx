@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Banner from './components/Banner'
 import DescricaoSobre from'./components/DescricaoSobre'
 import Personagens from './components/Personagens'
+import Footer from './components/Footer'
 import './styles/global.scss';
 
 const root = ReactDOM.createRoot(
@@ -15,5 +16,6 @@ root.render(
     <Banner />
     <DescricaoSobre />
     <Personagens />
+    <Footer />
   </React.StrictMode>
 );

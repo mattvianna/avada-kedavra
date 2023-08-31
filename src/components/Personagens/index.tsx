@@ -4,7 +4,7 @@ import './styles/style.scss'
 
 function Personagens() {
   return (
-    <div className='personagens'>
+    <div className='personagens' id='personagens'>
       <div className='personagens__wrap'>
         <h1>Personagens Marcantes</h1>
 
