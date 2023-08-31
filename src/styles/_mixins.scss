@@ -1,14 +1,15 @@
-@mixin titulo() {
+@mixin titulo($calc) {
   font-size: 48px;
-  color: #060606;
-  text-shadow: 2px 2px 2px #a85;
+  color: #e9e9e9;
+  text-shadow: 2px 2px 2px #060606;
   text-align: center;
   margin: 24px 0 32px;
   position: relative;
+  margin: 0 0 40px;
 
   &::before {
     content: "";
-    width: calc(45% - 140px);
+    width: $calc;
     height: 3px;
     background-color: #fcf5e7;
     position: absolute;
@@ -21,7 +22,7 @@
   }
   &::after {
     content: "";
-    width: calc(45% - 140px);
+    width: $calc;
     height: 3px;
     background-color: #fcf5e7;
     position: absolute;

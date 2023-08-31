@@ -7,17 +7,17 @@ function Header() {
     <header>
       <div className='container'>
         
-        <div className='container__logo'>
+        <a href='#topo' className='container__logo'>
           <img src={logo} alt="" />
-        </div>
+        </a>
 
         <div className='container__nav'>
           <ul className='navList'>
             <li className='navList__item'>
-              <a href="" className='navList__link'>Sobre</a>
+              <a href="#descricao" className='navList__link'>Sobre</a>
             </li>
             <li>
-              <a href="" className='navList__link'>Personagens</a>
+              <a href="#personagens" className='navList__link'>Personagens</a>
             </li>
           </ul>
         </div>

@@ -1,0 +1,36 @@
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 112px 0 40px;
+
+  .container {
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    & > img {
+      width: 300px;
+      margin: 0 32px;
+    }
+
+    &::before {
+      content: '';
+      width: 336px;
+      height: 20px;
+      background-image: url('../../assets/divider.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform: translateY(35px);;
+    }
+    &::after {
+      content: '';
+      width: 336px;
+      height: 20px;
+      background-image: url('../../assets/divider.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform: translateY(35px) scaleX(-1);
+    }
+  }
+}
