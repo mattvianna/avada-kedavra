@@ -16,8 +16,8 @@ function CharactersPage () {
   const [characters, setCharacters] = useState<ICharactersPage[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const limit = 25;
-  const charactersPerPage = 5;
+  const limit = 24;
+  const charactersPerPage = 6;
   const indexOfLastCharacter = currentPage * charactersPerPage;
   const indexOfFirstCharacter = indexOfLastCharacter - charactersPerPage;
   const currentCharacters = characters.slice(indexOfFirstCharacter, indexOfLastCharacter);
@@ -41,7 +41,10 @@ function CharactersPage () {
       <ul className='wrapLista'>
         {currentCharacters.slice(0, limit).map((character) => (
           <li className='wrapLista__item' key={character.name}>
-            <img className='wrapLista__item__foto' src={character.image} alt={character.name} />
+            <div className='moldura'>
+              <span className='moldura__adorno'></span>
+              <img className='moldura__foto' src={character.image} alt={character.name} />
+            </div>
             <div className='infoWrapper'>
               <p className='item__nome'>Nome: <span>{character.name ? character.name : "???"}</span></p>
               <p className='item__ator'>Ator: <span>{character.actor ? character.actor : "???"}</span></p>

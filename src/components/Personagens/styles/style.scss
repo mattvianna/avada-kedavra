@@ -3,6 +3,9 @@
 .personagens {
   display: flex;
   justify-content: center;
+  background-image: url('../../../assets/passos.svg');
+  background-repeat:  no-repeat;
+  background-size: contain;
 
   &__wrap {
     width: 1000px;
@@ -16,7 +19,7 @@
       align-items: center;
       justify-content: space-evenly;
       flex-flow: wrap;
-      row-gap: 64px;
+      row-gap: 88px;
       margin: 80px 0;
 
       @media(max-width: 980px) {
@@ -30,13 +33,29 @@
         flex-flow: column;
         align-items: center;
 
-        &__foto {
-          width: 200px;
-          height: 300px;
-          border-radius: 30px;
-          object-fit: cover;
-          object-position: center;
+        .moldura {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 24px;
+
+          &__adorno {
+            position: absolute;
+            background-image: url('../../../assets/moldura-01.svg');
+            background-repeat: no-repeat;
+            width: 257px;
+            height: 340px;
+          }
+
+          &__foto {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+          }
         }
+
 
         .infoWrapper {
           margin-top: 16px;
