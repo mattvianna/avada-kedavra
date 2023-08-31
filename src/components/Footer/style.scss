@@ -10,9 +10,17 @@ footer {
     align-items: center;
     position: relative;
 
+    @media(max-width: 980px) {
+      width: 100%;
+    }
+
     & > img {
       width: 300px;
       margin: 0 32px;
+
+      @media(max-width: 980px) {
+        margin: 0 16px;
+      }
     }
 
     &::before {
@@ -22,7 +30,11 @@ footer {
       background-image: url('../../assets/divider.svg');
       background-repeat: no-repeat;
       background-size: contain;
-      transform: translateY(35px);;
+      transform: translateY(35px);
+      
+      @media(max-width: 980px) {
+        transform: translateY(25px);
+      }
     }
     &::after {
       content: '';
@@ -32,6 +44,10 @@ footer {
       background-repeat: no-repeat;
       background-size: contain;
       transform: translateY(35px) scaleX(-1);
+      
+      @media(max-width: 980px) {
+        transform: translateY(25px) scaleX(-1);
+      }
     }
   }
 }
