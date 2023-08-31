@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Paginacao from '../Paginacao';
 import axios from 'axios';
 
 interface ICharactersPage {
@@ -12,11 +13,14 @@ interface ICharactersPage {
 }
 
 function CharactersPage () {
-  // const {image, name, dateOfBirth, house, patronus, actor, alive} = CharactersPage
   const [characters, setCharacters] = useState<ICharactersPage[]>([]);
-  console.log("🚀 ~ file: index.tsx:17 ~ CharactersPage ~ characters:", characters)
   const [currentPage, setCurrentPage] = useState(1);
+
+  const limit = 25;
   const charactersPerPage = 5;
+  const indexOfLastCharacter = currentPage * charactersPerPage;
+  const indexOfFirstCharacter = indexOfLastCharacter - charactersPerPage;
+  const currentCharacters = characters.slice(indexOfFirstCharacter, indexOfLastCharacter);
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -31,15 +35,6 @@ function CharactersPage () {
     fetchCharacters();
   }, []);
 
-  const limit = 25;
-
-  const indexOfLastCharacter = currentPage * charactersPerPage;
-  const indexOfFirstCharacter = indexOfLastCharacter - charactersPerPage;
-  const currentCharacters = characters.slice(indexOfFirstCharacter, indexOfLastCharacter);
-
-  const paginate = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-  };
 
   return (
     <div>
@@ -57,13 +52,8 @@ function CharactersPage () {
           </li>
         ))}
       </ul>
-      <ul className="pagination">
-        {Array.from({ length: Math.ceil(characters.length / charactersPerPage) }).slice(0, 5).map((_, index) => (
-          <li key={index} onClick={() => paginate(index + 1)}>
-            {index + 1}
-          </li>
-        ))}
-      </ul>
+      
+      <Paginacao setCurrentPage={setCurrentPage} characters={characters} charactersPerPage={charactersPerPage}/>
     </div>
   );
 };
