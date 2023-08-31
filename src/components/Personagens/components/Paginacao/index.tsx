@@ -21,7 +21,7 @@ function Paginacao({current, setCurrentPage, characters, charactersPerPage} : IP
 
   return (
     <ul className="pagination">
-      {Array.from({ length: Math.ceil(convertObject.length / charactersPerPage) }).slice(0, 5).map((_, index) => (
+      {Array.from({ length: Math.ceil(convertObject.length / charactersPerPage) }).slice(0, 4).map((_, index) => (
         <li 
           key={index}
           className={index + 1 === current ? 'active' : ''}
