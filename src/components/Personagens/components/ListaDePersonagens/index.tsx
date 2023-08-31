@@ -38,22 +38,28 @@ function CharactersPage () {
 
   return (
     <div>
-      <h1>Harry Potter Characters</h1>
-      <ul>
+      <ul className='wrapLista'>
         {currentCharacters.slice(0, limit).map((character) => (
-          <li key={character.name}>
-            <img src={character.image} alt={character.name} />
-            <h2>{character.name}</h2>
-            <p>{character.actor}</p>
-            <p>{character.dateOfBirth}</p>
-            <p>{character.house}</p>
-            <p>{character.patronus}</p>
-            <p>{character.alive ? "vivo" : "morto"}</p>
+          <li className='wrapLista__item' key={character.name}>
+            <img className='wrapLista__item__foto' src={character.image} alt={character.name} />
+            <div className='infoWrapper'>
+              <p className='item__nome'>Nome: <span>{character.name ? character.name : "???"}</span></p>
+              <p className='item__ator'>Ator: <span>{character.actor ? character.actor : "???"}</span></p>
+              <p className='item__aniversario'>Nascimento: <span>{character.dateOfBirth ? character.dateOfBirth : "???"}</span></p>
+              <p className='item__casa'>Casa: <span>{character.house ? character.house : "???"}</span></p>
+              <p className='item__patrono'>Patrono: <span>{character.patronus ? character.patronus : "???"}</span></p>
+              <p className='item__vivo'>Está vivo? <span>{character.alive ? "Permanece vivo 💫" : "Infelizmente morreu ☠️"}</span></p>
+            </div>
           </li>
         ))}
       </ul>
       
-      <Paginacao setCurrentPage={setCurrentPage} characters={characters} charactersPerPage={charactersPerPage}/>
+      <Paginacao 
+        current={currentPage} 
+        setCurrentPage={setCurrentPage} 
+        characters={characters} 
+        charactersPerPage={charactersPerPage}
+      />
     </div>
   );
 };
