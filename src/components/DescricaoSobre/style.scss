@@ -1,0 +1,16 @@
+@import "../../styles/mixins";
+
+.descricao {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &__titulo {
+    @include titulo();
+  }
+
+  &__texto {
+    font-size: 20px;
+    text-align: center;
+  }
+}
