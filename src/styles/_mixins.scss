@@ -1,0 +1,35 @@
+@mixin titulo() {
+  font-size: 48px;
+  color: #060606;
+  text-shadow: 2px 2px 2px #a85;
+  text-align: center;
+  margin: 24px 0 32px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: calc(45% - 140px);
+    height: 3px;
+    background-color: #fcf5e7;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-image: url('../assets/brown-line.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate3d(0,-50%,0);
+  }
+  &::after {
+    content: "";
+    width: calc(45% - 140px);
+    height: 3px;
+    background-color: #fcf5e7;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background-image: url('../assets/brown-line.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate3d(0,-50%,0) scaleX(-1);
+  }
+}
